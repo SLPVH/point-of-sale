@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
+:root {
+    --background: #ffffff;
+    --button-bg: #ffffff;
+    --button-color: #000000;
+    --button-color-active: #ffffff;
+    --green: #3fc78b;
+    --red: #e8514a;
+}
+
+html, body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    background: var(--background);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+    margin: 0;
+    padding: 0;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    margin: auto;
+    max-width: 100%;
+    text-align: center;
+}
+
+header button {
+    background: unset;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 12px 16px;
+    color: #404040;
+    cursor: pointer;
+}
+
+.wrapper {
+    max-width: 1248px;
+    width: 97%;
+    margin: 2vh auto 0px auto;
+}
+
+.wrapper .numbers {
+    max-width: 846px;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: stretch;
+}
+
+.wrapper .numbers button {
+    width: 32%;
+    font-size: 2em;
+    height: 110px;
+    border-radius: 10px;
+    margin: 6px 0px;
+    border: 1px solid #b9b9b9;
+    background: var(--button-bg);
+    color: var(--button-color);
+    outline: 0;
+    transition: background 0.05s linear;
+}
+
+.wrapper .numbers button:active {
+    color: var(--button-color-active);
+    background: var(--green);
+    transition: background 0s linear;
+}
+
+.wrapper .payment_amount {
+    max-width: 845px;
+    margin: 0px auto 13px auto;
+    text-align: center;
+}
+
+.wrapper .payment_amount input {
+    width: 100%;
+    font-size: 2.5em;
+    border: 0px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px 0px 10px 0px;
+    background: #fff0;
+}
+
+.wrapper .payment_amount p {
+    font-size: 1.25em;
+}
+
+.wrapper .payment_complete {
+    max-width: 853px;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: stretch;
+}
+
+.wrapper .payment_complete button {
+    width: 48%;
+    font-size: 1.25em;
+    padding: 20px 0px;
+    border-radius: 8px;
+    margin: 10px 0px 0px 0px;
+    outline: 0;
+    background: var(--button-bg);
+    border: 1px solid var(--green);
+}
+
+.wrapper .payment_complete .red {
+    color: var(--red);
+    border: 1px solid var(--red);
+}
+
+.wrapper .payment_complete .red:active {
+    color: var(--button-color-active);
+    background: var(--red);
+}
+
+.wrapper .payment_complete .green {
+    color: var(--green);
+    border: 1px solid var(--green);
+}
+
+.wrapper .payment_complete .green:active {
+    color: var(--button-color-active);
+    background: var(--green);
+}
+
+.menu_item {
+    display: inline;
+}
+
