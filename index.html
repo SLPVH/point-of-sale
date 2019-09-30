@@ -5,8 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>BCHPay Point Of Sale</title>
         <link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css">
+        <script src="assets/js/deps/qrcode.min.js"></script>
+        <script src="assets/js/deps/ejs_production.js"></script>
+        <script src="assets/js/deps/bchaddrjs-0.2.6.min.js"></script>
     </head>
-    <body></body>
-    <script src="assets/js/app.js"></script>
+    <body>
+        <div id="loading" class="loading-modal">
+            <div class="loading-anim">
+                <img height="135px" src="/assets/img/loading.svg">
+            </div>
+        </div>
+        <div id="main_wrap"></div>
+    </body>
+    <script src="assets/js/slp-receive.js"></script>
     <script src="assets/js/wallet.js"></script>
+    <script src="assets/js/app.js"></script>
 </html>

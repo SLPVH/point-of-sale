@@ -1,0 +1,11 @@
+<div id="payment_confirmed">
+    <div class="wrapper">
+        <div id="qrcode" style="text-align:center">
+            <%-qrcode%>
+        </div>
+        <p id="payment_status">Please send <%=amount%> <%=currency.toUpperCase()%> to<br/><br/><%=address%></p>
+    </div>
+    <div class="navigation">
+        <button onclick="loadView('dashboard', {})">Return to Dashboard</button>
+    </div>
+</div>

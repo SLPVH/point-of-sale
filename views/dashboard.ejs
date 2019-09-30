@@ -1,0 +1,46 @@
+<div class="wrapper">
+    <h1 style="text-align: center;margin-bottom: 8px;"><%=JSON.parse(localStorage.getItem('profile')).name;%></h1>
+</div>
+
+<%if(localStorage.getItem('tokenids') && JSON.parse(localStorage.getItem('tokenids')).length > 0) {%>
+<div class="coin_select">
+    <input type="radio" name="crypto" value="bch" id="bch" class="crypto_label" onclick="updateCoin(this)" checked="checked">
+    <label for="bch" class="crypto_label">Bitcoin Cash</label>
+    <%var tokens = JSON.parse(localStorage.getItem('tokens'));%>
+    <%tokens.forEach(element => {%>
+        <input type="radio" name="crypto" value="<%=element.name%>" id="<%=element.tokenid%>" onclick="updateCoin(this)"  class="crypto_label">
+        <label for="<%=element.tokenid%>" class="crypto_label"><%=element.name%></label>
+    <%});%>
+</div>
+<%};%>
+
+<div class="wrapper">
+    <div class="payment_amount">
+        <input id="payment_amount_input" type="text" placeholder="0.00" readonly="">
+        <p id="current_coin"><%=JSON.parse(localStorage.getItem('profile')).currency;%></p>
+    </div>
+
+    <div class="numbers">
+        <button onclick="addNumber(this)" value="1">1</button>
+        <button onclick="addNumber(this)" value="2">2</button>
+        <button onclick="addNumber(this)" value="3">3</button>
+        <button onclick="addNumber(this)" value="4">4</button>
+        <button onclick="addNumber(this)" value="5">5</button>
+        <button onclick="addNumber(this)" value="6">6</button>
+        <button onclick="addNumber(this)" value="7">7</button>
+        <button onclick="addNumber(this)" value="8">8</button>
+        <button onclick="addNumber(this)" value="9">9</button>
+        <button onclick="addNumber(this)" value=".">.</button>
+        <button onclick="addNumber(this)" value="0">0</button>
+        <button onclick="delNumber(1)"><img src="/assets/img/backspace.svg"></button>
+    </div>
+
+    <div class="payment_complete">
+        <button id="popmodal" class="green" onclick="openPayment()">GO TO PAYMENT</button>
+    </div>
+    </div>
+    <div class="navigation">
+        <button onclick="openTransactionHist('<%=JSON.parse(localStorage.getItem('profile')).cashaddress%>')">Invoice History</button>
+        <button onclick="loadView('settings', {})">Settings</button>
+    </div>
+</div>

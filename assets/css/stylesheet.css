@@ -3,6 +3,7 @@
 :root {
     --background: #ffffff;
     --button-bg: #ffffff;
+    --borders: #e6e9eb;
     --button-color: #000000;
     --button-color-active: #ffffff;
     --green: #3fc78b;
@@ -15,6 +16,7 @@ html, body {
     background: var(--background);
     margin: 0;
     padding: 0;
+    margin-bottom: 50px;
 }
 
 h1, h2, h3, h4, h5, h6, p, span {
@@ -33,9 +35,8 @@ a {
 }
 
 header {
-    margin: auto;
-    max-width: 100%;
-    text-align: center;
+    max-width: 1248px;
+    margin: 1vh auto 0px auto;
 }
 
 header button {
@@ -51,7 +52,7 @@ header button {
 
 .wrapper {
     max-width: 1248px;
-    width: 97%;
+    width: 95%;
     margin: 2vh auto 0px auto;
 }
 
@@ -67,10 +68,10 @@ header button {
 .wrapper .numbers button {
     width: 32%;
     font-size: 2em;
-    height: 110px;
+    height: 10vh;
     border-radius: 10px;
-    margin: 6px 0px;
-    border: 1px solid #b9b9b9;
+    margin: 3px 0px;
+    border: 1px solid var(--borders);
     background: var(--button-bg);
     color: var(--button-color);
     outline: 0;
@@ -85,7 +86,7 @@ header button {
 
 .wrapper .payment_amount {
     max-width: 845px;
-    margin: 0px auto 13px auto;
+    margin: 10px auto 13px auto;
     text-align: center;
 }
 
@@ -113,9 +114,9 @@ header button {
 }
 
 .wrapper .payment_complete button {
-    width: 48%;
-    font-size: 1.25em;
-    padding: 20px 0px;
+    width: 98%;
+    font-size: 1em;
+    padding: 15px 0px;
     border-radius: 8px;
     margin: 10px 0px 0px 0px;
     outline: 0;
@@ -123,27 +124,232 @@ header button {
     border: 1px solid var(--green);
 }
 
-.wrapper .payment_complete .red {
-    color: var(--red);
-    border: 1px solid var(--red);
-}
-
-.wrapper .payment_complete .red:active {
-    color: var(--button-color-active);
-    background: var(--red);
-}
-
 .wrapper .payment_complete .green {
-    color: var(--green);
-    border: 1px solid var(--green);
+    color: #3fc78b;
+    border: 1px solid #3fc78b;
 }
 
 .wrapper .payment_complete .green:active {
-    color: var(--button-color-active);
-    background: var(--green);
+    color: #ffffff;
+    background: #3fc78b;
+    border: 1px solid #3fc78b;
 }
 
 .menu_item {
     display: inline;
 }
 
+#qrcode {
+    margin: auto;
+    max-width: 560px;
+    max-height: 510px;
+}
+
+#qrcode img, #qrcode canvas {
+    width: 66%;
+    margin-top: 5vh;
+}
+
+#payment_status {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 8vh;
+}
+
+#exit_out {
+    background: #fff;
+    outline: none;
+    padding: 12px 12vw;
+    font-size: 1.2em;
+    color: #000;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    margin-top: 5vh;
+}
+
+#title {
+    margin: 10px 0px 14px 0px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 0px 0px 3px 0px;
+    border-radius: 5px;
+    border: 1px solid var(--borders);
+    font-size: 1em;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+select {
+    padding: 10px 10px;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--borders);
+    font-size: 1em;
+}
+
+label {
+    margin: 5px 0px 3px 0px;
+    display:inline-block;
+}
+
+.button {
+    width: 100%;
+    border: 0px;
+    color: #fff;
+    background: #3a3a3a;
+    padding: 12px 10px;
+    margin: 4px 0px 2px 0px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#token_search {
+    margin-bottom: 10px;
+}
+
+.token_box {
+    width: 100%;
+    background: #fff;
+    z-index: 2;
+    min-height: 90px;
+    padding: 15px 24px 20px 24px;
+    margin: 0px 16px 5px 0px;
+    border: 1px solid var(--borders);
+    border-radius: 7px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: none;
+    transition: border-color 0.2s ease-in;
+    overflow: hidden;
+}
+
+.token_box img {
+    width: 58px;
+    height: 58px;
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+}
+
+.token_box .token_info {
+    display: inline-block;
+    margin: 7px 0px 0px 70px;
+}
+
+#token_container {
+    margin-top: 5px;
+}
+
+#selected_tokens .token_box {
+    background: #3fc78b;
+    color: #fff;
+}
+
+.required::after {
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius:50%;
+    margin: 2px 0px 0px 4px;
+    background: #e8514a;
+}
+
+#title h2 {
+    margin-bottom: 2vh;
+}
+
+#title p {
+    margin-bottom: 3vh;
+}
+
+.loading-modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(255, 255, 255);
+}
+
+.loading-modal .loading-anim {
+    text-align: center;
+    margin-top: 30vh;
+}
+
+.navigation {
+    margin: auto;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    width: 100%;
+    padding: 7px 5px 5px 7px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: stretch;
+}
+
+.navigation button {
+    color: #fff;
+    background: #3fc78b;
+    padding: 15px 0px;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    margin: 1%;
+    max-width: 1248px;
+    flex: 1;
+}
+
+.transaction {
+    height: 80px;
+    background: #fff;
+    color: #171717;
+    border: 1px solid var(--borders);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: stretch;
+    line-height: 76px;
+}
+
+.coin_select {
+    overflow: auto;
+    white-space: nowrap;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.crypto_label {
+    height: 40px;
+    width: 143px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid var(--borders);
+    color: #000;
+    padding: 11px 6px 0px 6px;
+    margin-right: 1px;
+}
+
+.crypto_label:checked + label {
+    background: #3fc78b;
+    border: 1px solid #3fc78b;
+    color: #fff;
+}
+
+#current_coin {
+    text-transform: uppercase;
+}

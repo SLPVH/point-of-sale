@@ -1,0 +1,14 @@
+<div class="wrapper">
+<% response.c.forEach(element => { %>
+    <div class="transaction_wrapper">
+        <div class="transaction">
+            <div class="memes"><%=element.sender.substring(0, 18)%>...<%=element.sender.substring(36, 42)%></div>
+            <div class="memes"><%=element.output.e.v%></div>
+        </div>
+    </div>
+<%});%>
+</div>
+
+<div class="navigation">
+    <button onclick="loadView('dashboard', {})">Return to Dashboard</button>
+</div>

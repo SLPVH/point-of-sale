@@ -1,0 +1,81 @@
+<div id="merchant_profile">
+    <div class="wrapper">
+        <div id="title">
+            <h2>Let's configure some basic settings</h2>
+            <p>If you don't want token support, leave "SLP Address" blank and just hit "Done" on the token selection menu.</p>
+        </div>
+        <label for="store_name" class="required">Store Name</label>
+        <input name="store_name" id="store_name" type="text" value="" placeholder="Northwest Taxi">
+        <label for="cashaddress" class="required">Cash Address</label>
+        <input name="cashaddress" id="cashaddress" type="text" value="" placeholder="bitcoincash:qq..">
+        <label for="slpaddress">SLP Address</label>
+        <input name="slpaddress" id="slpaddress" type="text" value="" placeholder="simpleledger:qq..">
+        <label for="fiat_currency">Currency</label>
+        <select name="fiat_currency" id="fiat_currency">
+            <option value="usd">USD</OPTION>
+            <option value="aed">AED</OPTION>
+            <option value="ars">ARS</OPTION>
+            <option value="aud">AUD</OPTION>
+            <option value="bdt">BDT</OPTION>
+            <option value="bhd">BHD</OPTION>
+            <option value="bmd">BMD</OPTION>
+            <option value="brl">BRL</OPTION>
+            <option value="cad">CAD</OPTION>
+            <option value="chf">CHF</OPTION>
+            <option value="clp">CLP</OPTION>
+            <option value="cny">CNY</OPTION>
+            <option value="czk">CZK</OPTION>
+            <option value="dkk">DKK</OPTION>
+            <option value="eur">EUR</OPTION>
+            <option value="gbp">GBP</OPTION>
+            <option value="hkd">HKD</OPTION>
+            <option value="huf">HUF</OPTION>
+            <option value="idr">IDR</OPTION>
+            <option value="ils">ILS</OPTION>
+            <option value="inr">INR</OPTION>
+            <option value="jpy">JPY</OPTION>
+            <option value="krw">KRW</OPTION>
+            <option value="kwd">KWD</OPTION>
+            <option value="lkr">LKR</OPTION>
+            <option value="mmk">MMK</OPTION>
+            <option value="mxn">MXN</OPTION>
+            <option value="myr">MYR</OPTION>
+            <option value="nok">NOK</OPTION>
+            <option value="nzd">NZD</OPTION>
+            <option value="php">PHP</OPTION>
+            <option value="pkr">PKR</OPTION>
+            <option value="pln">PLN</OPTION>
+            <option value="rub">RUB</OPTION>
+            <option value="sar">SAR</OPTION>
+            <option value="sek">SEK</OPTION>
+            <option value="sgd">SGD</OPTION>
+            <option value="thb">THB</OPTION>
+            <option value="try">TRY</OPTION>
+            <option value="twd">TWD</OPTION>
+            <option value="uah">UAH</OPTION>
+            <option value="vef">VEF</OPTION>
+            <option value="vnd">VND</OPTION>
+            <option value="zar">ZAR</OPTION>
+            <option value="xdr">XDR</OPTION>
+            <option value="xag">XAG</OPTION>
+            <option value="xau">XAU</OPTION>
+        </select>
+    </div>
+    <div class="navigation"><button class="button" onclick="createProfile();">Next</button></div>    
+</div>
+
+<div id="token_settings" style="display: none;">
+    <div class="wrapper">
+        <div id="title">
+            <h2>What tokens do you want to accept?</h2>
+            <p>This one's optional. Simply enter the name or tokenid of the token you'd like to add and click on it once.</p>
+        </div>
+        <label for="store_name">Search Token Name</label>
+        <input name="store_name" type="text" oninput="searchTokens(this)" placeholder="eg SPICE, HONK, ACD, LLM, USDH">
+
+        <div id="token_container"></div>
+        <div id="selected_tokens"></div>
+    </div>
+    <div class="navigation"><button class="button" onclick="loadView('dashboard', {})">Done</button></div>
+</div>
+
